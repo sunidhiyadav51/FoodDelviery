@@ -1,88 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Delevry Webside</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodie - Delicious Food Delivery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
-    <!-- HEADER PART -->
-     <header>
+    <header>
         <nav class="navbar flex between wrapper">
             <a href="#" class="logo">Foodie.</a>
 
-            <!-- DESKTOP MENU -->
-
-            <ul class="navelist flex gap-3" >
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Menu</a>
-                </li>
-                <li>
-                    <a href="#">Service</a>
-                </li>
-                <li>
-                    <a href="#">about us</a>
-                </li>
-                <li>
-                    <a href="#">contacts</a>
-                </li>
+            <ul class="navlist flex gap-3">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
+
             <div class="desktop-action flex gap-2">
                 <a href="#" class="Cart-icon">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <span class="Cart-value">0</span>
                 </a>
-                <a href="#"class="btn">
-                    Sign in
-                    &nbsp;
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                </a>
-                <a href="#" class="hamburger">
+                <a href="#" class="btn hide-mobile">Sign in</a>
+                <a href="javascript:void(0)" class="hamburger" id="menu-btn">
                     <i class="fa-solid fa-bars"></i>
                 </a>
             </div>
-            <!-- MOBILE MENU -->
-             <ul class="mobile-menu" >
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Menu</a>
-                </li>
-                <li>
-                    <a href="#">Service</a>
-                </li>
-                <li>
-                    <a href="#">about us</a>
-                </li>
-                <li>
-                    <a href="#">contacts</a>
-                </li>
-                <li>
-                    <a href="#"class="btn">
-                    Sign in
-                    &nbsp;
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                </a>
-                </li>
+
+            <ul class="mobile-menu" id="mobile-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="btn">Sign in</a></li>
             </ul>
         </nav>
-     </header>
+    </header>
 
-     <!-- SECTION PART -->
-      <main>
-        <section>
-            <div class="hero-section">
-                
+    <main>
+        <section class="hero-section flex wrapper gap-4">
+            <div class="content">
+                <h1>Enjoy Your Delicious <span>Food</span></h1>
+                <p class="para">
+                    We will fill your tummy with delicious food with lightning-fast delivery.
+                </p>
+                <div class="flex gap-2">
+                    <a href="#" class="btn">Order Now</a>
+                    <div class="social-links flex gap-1">
+                        <a href="#" class="Social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="Social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="Social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="image/delivery-boy.png" alt="Delivery Boy" />
             </div>
         </section>
-      </main>
-      <!-- FOOTER PART -->
-       <footer></footer>
+
+        <section class="services-section wrapper p-top">
+            <div class="text-center">
+                <h5>Our Services</h5>
+                <h2>How does it work?</h2>
+            </div>
+
+            <div class="flex gap-3 between service-container">
+                <div class="service-card">
+                    <div class="images-container">
+                        <img src="image/easy-to-order.png" alt="Order" />
+                    </div>
+                    <h3>Easy to Order</h3>
+                    <p>You only need a few steps to order your favorite food.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="images-container">
+                        <img src="image/fast-delivery.png" alt="Delivery" />
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Delivery that is always on time, even faster than you expect.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="images-container">
+                        <img src="image/best-quality.png" alt="Quality" />
+                    </div>
+                    <h3>Best Quality</h3>
+                    <p>Not only fast—for us, quality is always our number one priority.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrapper text-center">
+            <p>&copy; 2026 Foodie Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('mobile-menu-active');
+        });
+    </script>
 </body>
 </html>
